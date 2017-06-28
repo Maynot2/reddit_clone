@@ -1,0 +1,5 @@
+<ul>
+  <% @stories.each do  |story|%>
+    <li><span><%= "#{story.name} " %></span><%= link_to story.link, story.link %></li>
+  <% end %>
+</ul>

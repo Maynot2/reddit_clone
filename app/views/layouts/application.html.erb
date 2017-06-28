@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <div class="container">
+      <% unless flash.notice.blank? %>
+        <div class="alert alert-danger"><%= flash.notice %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
