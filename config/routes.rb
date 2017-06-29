@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get  'stories/index' => 'stories#index'
-  get  'stories/new'   => 'stories#new', as: 'new_story'
+  get  'stories'       => 'stories#index'
+  get  'stories/new'   => 'stories#new',    as: 'new_story'
   post 'stories'       => 'stories#create'
 
   # resources :stories

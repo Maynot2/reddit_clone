@@ -10,7 +10,7 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     if @story.save
-      redirect_to stories_index_path
+      redirect_to stories_path
       flash[:notice] = "Story Submission succeeded"
     else
       render action: 'new'
