@@ -1,3 +1,16 @@
-<h2><%= @story.name %></h2>
+<div class="row">
+  <h2 class="col-sm-10">
+    <%= @story.name %>
+  </h2>
+  <h2 id='vote_score' class="col-sm-2 label label-info"">
+    Score: <span class="badge"><%= @story.votes.size %></span>
+  </h2>
+</div>
 
 <p><%= link_to @story.link, @story.link %></p>
+
+<div id="vote_form">
+  <%= form_for [@story, Vote.new], remote: true do |f|%>
+    <%= f.submit 'Vote for it', class:'btn btn-primary' %>
+  <% end %>
+</div>
